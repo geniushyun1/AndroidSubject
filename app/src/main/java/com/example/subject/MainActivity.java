@@ -1,6 +1,7 @@
 package com.example.subject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.ViewUtils;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -66,16 +67,24 @@ public class MainActivity extends AppCompatActivity {
 
                     if (bmi < 18.5) {
                         status = "저체중";
+                        bmiImage.setImageResource(R.drawable.bow1);
+                        bmiImage.setVisibility(View.VISIBLE);
                     } else if (bmi < 23) {
                         status = "정상";
                         bmiImage.setImageResource(R.drawable.bow);
                         bmiImage.setVisibility(View.VISIBLE);
                     } else if (bmi < 25) {
                         status = "과체중";
+                        bmiImage.setImageResource(R.drawable.reducefat);
+                        bmiImage.setVisibility(View.VISIBLE);
                     } else if (bmi < 30) {
                         status = "비만";
+                        bmiImage.setImageResource(R.drawable.reducefat);
+                        bmiImage.setVisibility(View.VISIBLE);
                     } else {
                         status = "고도비만";
+                        bmiImage.setImageResource(R.drawable.reducefat);
+                        bmiImage.setVisibility(View.VISIBLE);
                     }
 
                     String resultText = String.format("당신의 BMI는 %.2f입니다.\n건강 상태: %s", bmi, status);
